@@ -194,7 +194,7 @@ define([
 //            this.addAvailableWfsLayers();
 
                 // Check if there are layers in the URL search string and enable them
-                this.setWmsLayersFromUrl();
+                // this.setWmsLayersFromUrl();
 
                 this.sortLayers();
             };
