@@ -993,6 +993,7 @@ define([
                                             && namedLayers[i].styles[0].legendUrls && namedLayers[i].styles[0].legendUrls.length > 0)
                                         {
                                             wwLayer.legendUrl=namedLayers[i].styles[0].legendUrls[0];
+                                            // console.log( wwLayer.legendUrl)
                                         }
                                         if(layername==null)
                                         {

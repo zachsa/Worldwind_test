@@ -172,11 +172,11 @@ require([
 
 
             //add a wms layer example
-            var serveraddress ="http://app01.saeon.ac.za:8082/geoserver/wms";
-            var wmslayerName ="BEEH_grid:tmaxave07c";
-            var layerName ="Max temperature (daily)";
+            var serveraddress ="http://app01.saeon.ac.za:8082/geoserver/BEEH_shp/wms";
+            var wmslayerName ="BEEH_shp:hist_quickf.shp";
+            // var layerName ="Max temperature (daily)";
             //uncomment layerName==null to use the default wms title
-            // var layerName =null;
+            var layerName =null;
             var enabled =false;
             var opacity =1;
             var catergory =constants.LAYER_CATEGORY_OVERLAY;
@@ -196,8 +196,19 @@ require([
 
                 explorer.globe.layerManager.addDataLayer(NCCRD_data,{enabled: true, pickEnabled: true, opacity: 0.5});
             });
-            //add mouse clicks
 
+
+            //test surface image example
+            var surfaceImage = new WorldWind.SurfaceImage(new WorldWind.Sector(-34.834,-22.124,16.469,32.891),//min lat, max lat, min lon, max lon
+                "./customdata/BEEH_shp-hist_quickf.shp.png");
+
+
+            surfaceImage.resamplingMode = WorldWind.FILTER_NEAREST; // or FILTER_LINEAR by default
+            var surfaceImageLayer = new WorldWind.RenderableLayer();
+            surfaceImageLayer.displayName = "Stormflow";
+            surfaceImageLayer.addRenderable(surfaceImage);
+
+            explorer.globe.layerManager.addDataLayer(surfaceImageLayer,{enabled: true, pickEnabled: true, opacity: 0.5});
 
 
             pace.stop();
