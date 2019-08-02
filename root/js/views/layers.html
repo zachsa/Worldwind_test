@@ -17,11 +17,11 @@
                     </a>
                 </h5>
             </div>
-            <div class="panel-collapse collapse" id="data-layers-panel">
+            <div class="panel-collapse collapse in" id="data-layers-panel">
                 <ul class="list-group" data-bind="template: { name: 'layer-template', foreach: dataLayers}" id="data-layers-item-container"></ul>
             </div>
         </div>
-        <div class="panel panel-default">
+        <!-- <div class="panel panel-default">
             <div class="panel-heading">
                 <h5 class="panel-title">
                     <a data-toggle="collapse" href="#polygon-layers-panel" aria-expanded="false"
@@ -33,9 +33,9 @@
             <div class="panel-collapse collapse" id="polygon-layers-panel">
                 <ul class="list-group" data-bind="template: { name: 'layer-template', foreach: polygonLayers}" id="polygon-layers-item-container"></ul>
             </div>
-        </div>
+        </div> -->
 
-        <div class="panel panel-default">
+        <!-- <div class="panel panel-default">
             <div class="panel-heading">
                 <h5 class="panel-title">
                     <a data-toggle="collapse" href="#image-layers-panel" aria-expanded="false"
@@ -47,7 +47,7 @@
             <div class="panel-collapse collapse" id="image-layers-panel">
                 <ul class="list-group" data-bind="template: { name: 'layer-template', foreach: imageLayers}" id="image-layers-item-container"></ul>
             </div>
-        </div>
+        </div> -->
 
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -58,10 +58,11 @@
                     </a>
                 </h5>
             </div>
-            <div class="panel-collapse collapse in" id="overlay-layers-panel">
+            <div class="panel-collapse collapse" id="overlay-layers-panel">
                 <ul class="list-group" data-bind="template: { name: 'layer-template', foreach: overlayLayers}" id="overlay-layers-item-container"></ul>
             </div>
         </div>
+        
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h5 class="panel-title">
@@ -71,7 +72,7 @@
                     </a>
                 </h5>
             </div>
-            <div class="panel-collapse collapse in" id="base-layers-panel">
+            <div class="panel-collapse collapse" id="base-layers-panel">
                 <ul class="list-group" data-bind="template: { name: 'layer-template', foreach: baseLayers}" id="base-layers-item-container"></ul>
             </div>
         </div>
