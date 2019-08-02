@@ -208,7 +208,14 @@ require([
             var surfaceImageLayer = new WorldWind.RenderableLayer();
             surfaceImageLayer.displayName = "Stormflow";
             surfaceImageLayer.addRenderable(surfaceImage);
-            surfaceImageLayer.legendUrl = "./customdata/geoserver-GetLegendGraphic.png";
+            var screenOffset = new WorldWind.Offset(WorldWind.OFFSET_FRACTION, 1, WorldWind.OFFSET_FRACTION, 1);
+            var screenImage2 = new WorldWind.ScreenImage(screenOffset, "./customdata/geoserver-GetLegendGraphic.png");
+            screenImage2.imageOffset = new WorldWind.Offset(WorldWind.OFFSET_FRACTION, 1, WorldWind.OFFSET_FRACTION, 1);
+            // var screenImage1 = new WorldWind.ScreenImage(screenOffset, "data/400x230-splash-nww.png");
+            surfaceImageLayer.addRenderable(screenImage2);
+
+
+            // surfaceImageLayer.legendUrl = "./customdata/geoserver-GetLegendGraphic.png";
             // console.log(surfaceImageLayer.legendUrl)
             surfaceImageLayer.enabled = true;
 
