@@ -227,6 +227,8 @@ define([
             // Explorer layer type
             layer.category = category;
 
+            layer.legendUrl = opt.legendUrl;
+
             // layer.title = "sdfsdf"
             // Propagate enabled and pick options to the layer object
             layer.enabled = opt.enabled === undefined ? true : opt.enabled;

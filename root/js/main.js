@@ -172,21 +172,22 @@ require([
 
 
             //add a wms layer example
-            var serveraddress ="http://app01.saeon.ac.za:8082/geoserver/BEEH_shp/wms";
-            var wmslayerName ="BEEH_shp:hist_quickf.shp";
-            // var layerName ="Max temperature (daily)";
-            //uncomment layerName==null to use the default wms title
-            var layerName =null;
-            var enabled =false;
-            var opacity =1;
-            var catergory =constants.LAYER_CATEGORY_OVERLAY;
-            //TODO: add functionality for image and polygon categories
-            explorer.globe.layerManager.addAvailableWmsLayers2(serveraddress,
-                wmslayerName,
-                layerName,
-                enabled,
-                opacity,
-                catergory);
+            // var serveraddress ="http://app01.saeon.ac.za:8082/geoserver/BEEH_shp/wms";
+            // var serveraddress ="./customdata/geoserver-GetCapabilities.vnd.ogc-2.xml";
+            // var wmslayerName ="BEEH_shp:Soils.shp";
+            // // var layerName ="Max temperature (daily)";
+            // //uncomment layerName==null to use the default wms title
+            // var layerName =null;
+            // var enabled =false;
+            // var opacity =1;
+            // var catergory =constants.LAYER_CATEGORY_OVERLAY;
+            // //TODO: add functionality for image and polygon categories
+            // explorer.globe.layerManager.addAvailableWmsLayers2(serveraddress,
+            //     wmslayerName,
+            //     layerName,
+            //     enabled,
+            //     opacity,
+            //     catergory);
 
             //add the nccrd data
             require(['NCCRD'], function (NCCRD) {
@@ -207,8 +208,11 @@ require([
             var surfaceImageLayer = new WorldWind.RenderableLayer();
             surfaceImageLayer.displayName = "Stormflow";
             surfaceImageLayer.addRenderable(surfaceImage);
+            surfaceImageLayer.legendUrl = "./customdata/geoserver-GetLegendGraphic.png";
+            // console.log(surfaceImageLayer.legendUrl)
+            surfaceImageLayer.enabled = true;
 
-            explorer.globe.layerManager.addDataLayer(surfaceImageLayer,{enabled: true, pickEnabled: true, opacity: 0.5});
+            explorer.globe.layerManager.addOverlayLayer(surfaceImageLayer,{enabled: true, opacity: 0.6});
 
 
             pace.stop();
