@@ -115,7 +115,7 @@ define([
             this.globe = new Globe(wwd, globeOptions);
 
             window.layermanager = this.globe.layerManager;
-            window.layermanagerhelper = this.globe.layerManagerHelper;
+            // window.layermanagerhelper = this.globe.layerManagerHelper;
             // // Load additional layers and layer options
             window.layermanager.loadDefaultLayers();
 

@@ -217,9 +217,9 @@ require([
 
             // surfaceImageLayer.legendUrl = "./customdata/geoserver-GetLegendGraphic.png";
             // console.log(surfaceImageLayer.legendUrl)
-            surfaceImageLayer.enabled = true;
+            // surfaceImageLayer.enabled = true;
 
-            explorer.globe.layerManager.addOverlayLayer(surfaceImageLayer,{enabled: true, opacity: 0.6});
+            explorer.globe.layerManager.addOverlayLayer(surfaceImageLayer,{enabled: false, opacity: 0.6});
 
 
             pace.stop();

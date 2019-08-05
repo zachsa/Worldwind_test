@@ -123,7 +123,7 @@ define([
 
             // Observable properties
             this.use24Time = ko.observable(false);
-            this.timeZoneDetectEnabled = ko.observable(true);
+            this.timeZoneDetectEnabled = ko.observable(false);
             this.timeZoneOffsetHours = ko.observable(0); // default to UTC
             this.timeZoneName = ko.observable("UTC"); // default to UTC
             this.dateTime = ko.observable(new Date(0));
@@ -159,7 +159,7 @@ define([
                 includeRotateControls = options ? options.includeRotateControls : true,
                 includeTiltControls = options ? options.includeTiltControls : true,
                 includeZoomControls = options ? options.includeZoomControls : true,
-                includeExaggerationControls = options ? options.includeExaggerationControls : true,
+                includeExaggerationControls = options ? options.includeExaggerationControls : false,
                 includeFieldOfViewControls = options ? options.includeFieldOfViewControls : false,
                 bmngImageLayer,
                 controls,
@@ -196,7 +196,7 @@ define([
             // Add TimeZone support
             this.timeZoneLayer = new TimeZoneLayer();
             this.layerManager.addEffectLayer(this.timeZoneLayer, {
-                enabled: true,
+                enabled: false,
                 pickEnabled: true,
                 hideInMenu: false
             });
@@ -205,7 +205,7 @@ define([
             if (showBackground || showBackground === undefined) {
                 // Set the background color to variable shade of blue
                 this.layerManager.addEffectLayer(new EnhancedStarFieldLayer(this), {
-                    enabled: true,
+                    enabled: false,
                     hideInMenu: false
                 });
                 this.layerManager.addEffectLayer(new SkyBackgroundLayer(this), {
@@ -214,7 +214,7 @@ define([
                 });
                 // Add the optional Day/Night mode and Atmosphere effect
                 this.layerManager.addEffectLayer(new EnhancedAtmosphereLayer(this), {
-                    enabled: true,
+                    enabled: false,
                     hideInMenu: false
                 });
                 this.layerManager.addEffectLayer(coordlayer, {

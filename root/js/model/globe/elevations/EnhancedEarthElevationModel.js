@@ -46,7 +46,7 @@ define([
             var dted0 = new WorldWind.EarthRestElevationCoverage(null, "/standalonedata/Earth/DTED0");
             // wwd.globe.elevationModel.removeAllCoverages();
             // wwd.globe.elevationModel.addCoverage(dted0);
-            this.addCoverage(dted0);
+            // this.addCoverage(dted0);
 
            // this.addCoverage(new EmxsysGebcoElevationCoverage());
            // this.addCoverage(new EmxsysSrtmElevationCoverage());
